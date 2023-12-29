@@ -1,0 +1,52 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "run-p check:*",
+    "check:format": "prettier --cache -c '**/*.{ts,json,yml,yaml,md}'",
+    "check:lint": "eslint --cache --max-warnings 0 '**/*.ts'",
+    "check:tsc": "tsc",
+    "check:tsc:watch": "tsc --watch",
+    "cli": "npm run start ./src/cli/main.ts",
+    "fix": "run-s fix:format fix:lint check:tsc",
+    "fix:format": "prettier --cache --write '**/*.{ts,json,yml,yaml,md}'",
+    "fix:lint": "eslint --cache --max-warnings 0 --fix '**/*.{ts,tsx}'",
+    "sort": "sort-package-json",
+    "start": "node -r esbuild-register",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "update:pkgs": "ncu -u"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.481.0",
+    "@aws-sdk/lib-dynamodb": "3.481.0",
+    "aws-xray-sdk": "3.5.3",
+    "dayjs": "1.11.10",
+    "fs-extra": "11.2.0",
+    "get-stream": "8.0.1",
+    "inversify": "6.0.2",
+    "lodash.chunk": "4.2.0",
+    "lodash.orderby": "4.6.0",
+    "lodash.sortby": "4.7.0",
+    "source-map-support": "0.5.21",
+    "undici": "6.2.1",
+    "uuid": "9.0.1",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "@classmethod/aws-util": "file:../shared/aws-util",
+    "@types/aws-lambda": "8.10.130",
+    "@types/fs-extra": "11.0.4",
+    "@types/inquirer": "9.0.7",
+    "@types/lodash.chunk": "4.2.9",
+    "@types/lodash.orderby": "4.6.9",
+    "@types/lodash.sortby": "4.7.9",
+    "@types/source-map-support": "0.5.10",
+    "@types/uuid": "9.0.7",
+    "dotenv": "16.3.1",
+    "inquirer": "9.2.12",
+    "vitest": "1.1.0"
+  }
+}

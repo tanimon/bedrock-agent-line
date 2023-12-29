@@ -6,6 +6,7 @@
   "words": [
     "classmethod",
     "cqrs",
+    "hotswap",
     "inversify",
     "langchain",
     "Minio",

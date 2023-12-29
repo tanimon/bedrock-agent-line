@@ -6,7 +6,10 @@
   "words": [
     "classmethod",
     "cqrs",
+    "hotswap",
     "inversify",
+    "langchain",
+    "llms",
     "Minio",
     "pkgs",
     "sortby",
